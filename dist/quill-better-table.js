@@ -2939,7 +2939,7 @@ class quill_better_table_BetterTable extends Module {
       let isTargetCellSelected = this.tableSelection.selectedTds.map(tableCell => tableCell.domNode).includes(cellNode);
 
       if (this.tableSelection.selectedTds.length <= 0 || !isTargetCellSelected) {
-        this.tableSelection.setSelection(cellNode.getBoundingClientRect(), cellNode.getBoundingClientRect());
+        this.tableSelection.setSelection(cellNode?.getBoundingClientRect(), cellNode?.getBoundingClientRect());
       }
 
       if (this.tableOperationMenu) this.tableOperationMenu = this.tableOperationMenu.destroy();
