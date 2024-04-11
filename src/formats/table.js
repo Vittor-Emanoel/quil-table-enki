@@ -383,7 +383,7 @@ TableColGroup.tagName = "colgroup"
 
       if (!colGroup) return
       const tableWidth = colGroup.children.reduce((sumWidth, col) => {
-        sumWidth = sumWidth + parseInt(col.formats()[TableCol.blotName].width, 10)
+        sumWidth = sumWidth + parseInt(col.formats()[TableCol.blotName]?.width, 10)
         return sumWidth 
       }, 0)
 
