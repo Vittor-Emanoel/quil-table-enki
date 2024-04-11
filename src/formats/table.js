@@ -388,7 +388,7 @@ TableColGroup.tagName = "colgroup"
       }, 0)
 
 
-      this.domNode.style.width = `${table}px`
+      this.domNode.style.width = `${tableWidth}px`
     }, 0)
   }
 
