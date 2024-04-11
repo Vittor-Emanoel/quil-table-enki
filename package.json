@@ -1,6 +1,6 @@
 {
   "name": "table-enki",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Módulo para tabelas no quilljs",
   "main": "dist/quill-better-table.js",
   "type": "module",
