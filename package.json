@@ -1,17 +1,17 @@
 {
-  "engines": {
-    "npm": ">=10.5.0",
-    "node": ">=18.20.0"
-  },
-  "name": "@vittor/quill-table-enki",
-  "version": "1.2.10",
+  "name": "table-enki",
+  "version": "1.0.0",
   "description": "Módulo para tabelas no quilljs",
   "main": "dist/quill-better-table.js",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.js --mode=development",
-    "build": "webpack --config webpack.config.js --mode=production --env.minimize; webpack --config webpack.config.js --mode=production; rm dist/quill-better-table;",
+    "build": "webpack --config webpack.config.js ",
     "test": "npx jest --runInBand test/",
     "test:dev": "npx jest --runInBand --watchAll test/"
+  },
+  "engines": {
+    "npm": ">=10.5.0",
+    "node": ">=18.20.0"
   },
   "keywords": ["quill-table-enki"],
   "author": "vittor",
