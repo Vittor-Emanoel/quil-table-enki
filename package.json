@@ -1,12 +1,12 @@
 {
   "name": "table-enki",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Módulo para tabelas no quilljs",
   "main": "dist/quill-better-table.js",
-  "type": "module",
+  
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.js --mode=development",
-    "build": "webpack --config webpack.config.js ",
+    "build": "webpack --config webpack.config.js --mode=production",
     "test": "npx jest --runInBand test/",
     "test:dev": "npx jest --runInBand --watchAll test/"
   },
