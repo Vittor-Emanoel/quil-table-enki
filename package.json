@@ -1,9 +1,8 @@
 {
   "name": "table-enki",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Módulo para tabelas no quilljs",
   "main": "dist/quill-better-table.js",
-  
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.js --mode=development",
     "build": "webpack --config webpack.config.js --mode=production",
@@ -14,7 +13,9 @@
     "npm": ">=10.5.0",
     "node": ">=18.20.0"
   },
-  "keywords": ["quill-table-enki"],
+  "keywords": [
+    "quill-table-enki"
+  ],
   "author": "vittor",
   "license": "ISC",
   "devDependencies": {
