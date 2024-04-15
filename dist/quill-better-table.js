@@ -1821,23 +1821,24 @@ function matchTable(node, delta, scroll) {
 
 
 
+
 // import table node matchers
 
 
-const Module = Quill.import('core/module');
-const quill_better_table_Delta = Quill.import('delta');
+const Module = external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default()["import"]('core/module');
+const quill_better_table_Delta = external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default()["import"]('delta');
 
 class BetterTable extends Module {
   static register() {
-    Quill.register(TableCol, true);
-    Quill.register(TableColGroup, true);
-    Quill.register(TableCellLine, true);
-    Quill.register(TableCell, true);
-    Quill.register(TableRow, true);
-    Quill.register(TableBody, true);
-    Quill.register(TableContainer, true);
-    Quill.register(TableViewWrapper, true);
-    Quill.register(TableViewWrapper, true);
+    external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default().register(TableCol, true);
+    external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default().register(TableColGroup, true);
+    external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default().register(TableCellLine, true);
+    external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default().register(TableCell, true);
+    external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default().register(TableRow, true);
+    external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default().register(TableBody, true);
+    external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default().register(TableContainer, true);
+    external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default().register(TableViewWrapper, true);
+    external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default().register(TableViewWrapper, true);
     // register customized Header，overwriting quill built-in Header
     // Quill.register('formats/header', Header, true);
   }
@@ -1974,8 +1975,8 @@ class BetterTable extends Module {
         return memo;
       }, memo);
     }, delta);
-    this.quill.updateContents(delta, Quill.sources.USER);
-    this.quill.setSelection(range.index + columns + 1, Quill.sources.API);
+    this.quill.updateContents(delta, (external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default()).sources.USER);
+    this.quill.setSelection(range.index + columns + 1, (external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default()).sources.API);
   }
   showTableTools(table, quill, options) {
     this.table = table;
@@ -2020,7 +2021,7 @@ BetterTable.keyboardBindings = {
     handler(range, context) {
       // bugfix: a unexpected new line inserted when user compositionend with hitting Enter
       if (this.quill.selection && this.quill.selection.composing) return;
-      const Scope = Quill.imports.parchment.Scope;
+      const Scope = (external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default()).imports.parchment.Scope;
       if (range.length > 0) {
         this.quill.scroll.deleteAt(range.index, range.length); // So we do not trigger text-change
       }
@@ -2031,16 +2032,16 @@ BetterTable.keyboardBindings = {
         return formats;
       }, {});
       // insert new cellLine with lineFormats
-      this.quill.insertText(range.index, '\n', lineFormats['table-cell-line'], Quill.sources.USER);
+      this.quill.insertText(range.index, '\n', lineFormats['table-cell-line'], (external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default()).sources.USER);
       // Earlier scroll.deleteAt might have messed up our selection,
       // so insertText's built in selection preservation is not reliable
-      this.quill.setSelection(range.index + 1, Quill.sources.SILENT);
+      this.quill.setSelection(range.index + 1, (external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default()).sources.SILENT);
       this.quill.focus();
       Object.keys(context.format).forEach(name => {
         if (lineFormats[name] != null) return;
         if (Array.isArray(context.format[name])) return;
         if (name === 'link') return;
-        this.quill.format(name, context.format[name], Quill.sources.USER);
+        this.quill.format(name, context.format[name], (external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default()).sources.USER);
       });
     }
   },
@@ -2054,7 +2055,7 @@ BetterTable.keyboardBindings = {
       if (target && target.statics.blotName === 'table-view') {
         const targetCell = target.table().rows()[0].children.head;
         const targetLine = targetCell.children.head;
-        this.quill.setSelection(targetLine.offset(this.quill.scroll), 0, Quill.sources.USER);
+        this.quill.setSelection(targetLine.offset(this.quill.scroll), 0, (external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default()).sources.USER);
         return false;
       }
       return true;
@@ -2069,7 +2070,7 @@ BetterTable.keyboardBindings = {
         const rows = target.table().rows();
         const targetCell = rows[rows.length - 1].children.head;
         const targetLine = targetCell.children.head;
-        this.quill.setSelection(targetLine.offset(this.quill.scroll), 0, Quill.sources.USER);
+        this.quill.setSelection(targetLine.offset(this.quill.scroll), 0, (external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default()).sources.USER);
         return false;
       }
       return true;
@@ -2104,14 +2105,14 @@ function makeTableArrowHandler(up) {
           totalColspanOfTargetCell += parseInt(targetCell.formats()['colspan'], 10);
         }
         const index = targetCell.offset(this.quill.scroll);
-        this.quill.setSelection(index, 0, Quill.sources.USER);
+        this.quill.setSelection(index, 0, (external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default()).sources.USER);
       } else {
         const targetLine = cell.table().parent[key];
         if (targetLine != null) {
           if (up) {
-            this.quill.setSelection(targetLine.offset(this.quill.scroll) + targetLine.length() - 1, 0, Quill.sources.USER);
+            this.quill.setSelection(targetLine.offset(this.quill.scroll) + targetLine.length() - 1, 0, (external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default()).sources.USER);
           } else {
-            this.quill.setSelection(targetLine.offset(this.quill.scroll), 0, Quill.sources.USER);
+            this.quill.setSelection(targetLine.offset(this.quill.scroll), 0, (external_commonjs_quill_commonjs2_quill_amd_quill_root_Quill_default()).sources.USER);
           }
         }
       }
@@ -2230,7 +2231,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__912__;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("c37d763178f61d35085a")
+/******/ 		__webpack_require__.h = () => ("e6408a0b853c3b107488")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
