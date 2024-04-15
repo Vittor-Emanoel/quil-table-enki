@@ -86,8 +86,6 @@ class BetterTable extends Module {
           node.classList.contains('quill-better-table')
       })[0]
 
-      console.log(tableNode, 'tableNode')
-
       const rowNode = path.filter(node => {
         return node.tagName &&
           node.tagName.toUpperCase() === 'TR' &&
@@ -100,7 +98,7 @@ class BetterTable extends Module {
           node.getAttribute('data-row')
       })[0]
 
-      let isTargetCellSelected = this.tableSelection.selectedTds
+      let isTargetCellSelected = this.tableSelection?.selectedTds
         .map(tableCell => tableCell.domNode)
         .includes(cellNode)
 

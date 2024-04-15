@@ -214,7 +214,7 @@ class TableColumnTool {
     let existCells = Array.from(this.domNode.querySelectorAll('.qlbt-col-tool-cell'));
     for (let index = 0; index < Math.max(cellsNumber, existCells.length); index++) {
       let col = tableCols.at(index);
-      let colWidth = col && parseInt(col.formats()[col.statics.blotName].width, 10);
+      let colWidth = col && parseInt(col.formats()[col.statics.blotName]?.width, 10);
       // if cell already exist
       let toolCell = null;
       if (!existCells[index]) {
@@ -1923,14 +1923,13 @@ class BetterTable extends Module {
       const tableNode = path.filter(node => {
         return node.tagName && node.tagName.toUpperCase() === 'TABLE' && node.classList.contains('quill-better-table');
       })[0];
-      console.log(tableNode, 'tableNode');
       const rowNode = path.filter(node => {
         return node.tagName && node.tagName.toUpperCase() === 'TR' && node.getAttribute('data-row');
       })[0];
       const cellNode = path.filter(node => {
         return node.tagName && node.tagName.toUpperCase() === 'TD' && node.getAttribute('data-row');
       })[0];
-      let isTargetCellSelected = this.tableSelection.selectedTds.map(tableCell => tableCell.domNode).includes(cellNode);
+      let isTargetCellSelected = this.tableSelection?.selectedTds.map(tableCell => tableCell.domNode).includes(cellNode);
       if (this.tableSelection.selectedTds.length <= 0 || !isTargetCellSelected) {
         this.tableSelection.setSelection(cellNode.getBoundingClientRect(), cellNode.getBoundingClientRect());
       }
@@ -2469,7 +2468,7 @@ module.exports = function (urlString) {
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1713209882319
+      // 1713210620220
       var cssReload = __webpack_require__(140)(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -2579,7 +2578,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__912__;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("e6408a0b853c3b107488")
+/******/ 		__webpack_require__.h = () => ("cae5b90077c5582b28a8")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
